@@ -8,7 +8,7 @@ import { z } from "zod";
 const claimUsernameFormSchema = z.object({
   username: z
     .string()
-    .min(3, { message: "Pelo menos 3 letras" })
+    .min(3, { message: "Pelo menos 3 caracteres (letras e/ou hífens)" })
     .regex(/^([a-z\\-]+)$/i, { message: "Digite apenas letras e hífens" })
     .transform((username) => username.toLowerCase()),
 });
